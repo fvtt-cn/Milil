@@ -6,6 +6,8 @@ A simple tool to turn your music collections into Foundry VTT Module with playli
 ## Installation
 Milil itself does not need installation, it's a Click-to-Run program.
 
+[Download Link](https://github.com/fvtt-cn/Milil/releases)
+
 However, you need `.NET 5.0` Runtime to run it or download a self-contained Milil instead. *Milil size <1M, but self-contained Milil size >50M.*
 
 [.NET Desktop Runtime 5.0.0](https://dotnet.microsoft.com/download/dotnet/5.0)

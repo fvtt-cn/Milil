@@ -6,6 +6,8 @@
 ## 安装
 Milil 自身不需要安装，双击即可运行。
 
+[下载地址](https://github.com/fvtt-cn/Milil/releases)
+
 然而，你需要 `.NET 5.0` 库来运行。如果没有，你需要下载替代的自封装的 Milil。*Milil 体积小于 1M，但自封装版本会大于 50M。*
 
 [.NET Desktop Runtime 5.0.0](https://dotnet.microsoft.com/download/dotnet/5.0)
