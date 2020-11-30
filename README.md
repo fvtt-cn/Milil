@@ -30,3 +30,4 @@ However, you need `.NET 5.0` Runtime to run it or download a self-contained Mili
 - Currently, Milil will ignore all 2nd level and deeper directories and their files/musics.
 - The root directory name must be a valid Foundry VTT module name (e.g. `My_Music`).
 - A valid filename might be URL unsafe and not handled by Milil and Foundry VTT itself. If so, it'd be unplayable.
+- Only detects files with `.ogg|.mp3|.flac|.wav|.webm` extension.

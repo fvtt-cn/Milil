@@ -30,3 +30,4 @@ Milil 自身不需要安装，双击即可运行。
 - 目前 Milil 会忽略所有二级和更深目录里的音乐。
 - 根目录名称必须是 Foundry VTT MOD 可用的名称（比如 `My_Music`）。
 - 有效的文件名不一定是 URL 友好的，如果没有被 Milil 和 Foundry VTT 正确处理。这样的文件将无法播放。
+- 仅检测扩展名为 `.ogg|.mp3|.flac|.wav|.webm` 的文件。
