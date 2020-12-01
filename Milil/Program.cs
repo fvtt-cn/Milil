@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -34,6 +35,7 @@ namespace Milil
         private static readonly JsonSerializerOptions ModuleSerializationRules = new JsonSerializerOptions
         {
             WriteIndented = true,
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
         }.SetupExtensions();
 
         private static string GetId() => ShortId.Generate(IdRules);
@@ -122,7 +124,8 @@ namespace Milil
 
             try
             {
-                await using var moduleFileR = File.Open(MODULE_FILE, FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read);
+                await using var moduleFileR =
+                    File.Open(MODULE_FILE, FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read);
                 module = await JsonSerializer.DeserializeAsync<Module>(moduleFileR);
             }
             catch (JsonException jEx)
