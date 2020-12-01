@@ -8,7 +8,7 @@ Milil 自身不需要安装，双击即可运行。
 
 [下载地址](https://github.com/fvtt-cn/Milil/releases)
 
-然而，你需要 `.NET 5.0` 库来运行。如果没有，你需要下载替代的自封装的 Milil。*Milil 体积小于 1M，但自封装版本会大于 50M。*
+然而，你需要 `.NET 5.0` 库来运行。如果没有，你需要下载替代的自封装的 Milil。*Milil 体积小于 1M，但自封装版本会大于 30M。*
 
 [.NET Desktop Runtime 5.0.0](https://dotnet.microsoft.com/download/dotnet/5.0)
 
@@ -30,6 +30,7 @@ Milil 自身不需要安装，双击即可运行。
 
 ## 限制
 - 目前 Milil 会忽略所有二级和更深目录里的音乐。
-- 根目录名称必须是 Foundry VTT MOD 可用的名称（比如 `My_Music`）。
+- 根目录名称必须是 Foundry VTT MOD 可用的名称（比如 `My_Music`），否则无法被 Foundry VTT 识别。
 - 有效的文件名不一定是 URL 友好的，如果没有被 Milil 和 Foundry VTT 正确处理。这样的文件将无法播放。
-- 仅检测扩展名为 `.ogg|.mp3|.flac|.wav|.webm` 的文件。
+  - 目前 Milil 会转义文件（夹）名中的 `#`。
+- 仅检测扩展名为 `.ogg|.mp3|.flac|.wav|.webm` 的文件（来自 Foundry VTT 官方支持音频格式列表）。

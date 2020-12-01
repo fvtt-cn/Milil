@@ -8,7 +8,7 @@ Milil itself does not need installation, it's a Click-to-Run program.
 
 [Download Link](https://github.com/fvtt-cn/Milil/releases)
 
-However, you need `.NET 5.0` Runtime to run it or download a self-contained Milil instead. *Milil size <1M, but self-contained Milil size >50M.*
+However, you need `.NET 5.0` Runtime to run it or download a self-contained Milil instead. *Milil size <1M, but self-contained Milil size >30M.*
 
 [.NET Desktop Runtime 5.0.0](https://dotnet.microsoft.com/download/dotnet/5.0)
 
@@ -30,6 +30,7 @@ However, you need `.NET 5.0` Runtime to run it or download a self-contained Mili
 
 ## Limitation
 - Currently, Milil will ignore all 2nd level and deeper directories and their files/musics.
-- The root directory name must be a valid Foundry VTT module name (e.g. `My_Music`).
+- The root directory name must be a valid Foundry VTT module name (e.g. `My_Music`, but can't be `My Music?!`).
 - A valid filename might be URL unsafe and not handled by Milil and Foundry VTT itself. If so, it'd be unplayable.
-- Only detects files with `.ogg|.mp3|.flac|.wav|.webm` extension.
+  - Currently, Milil escapes `#`.
+- Only detects files with `.ogg|.mp3|.flac|.wav|.webm` extension (From Foundry VTT officially supported sound formats list).
