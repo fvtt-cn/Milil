@@ -118,7 +118,19 @@ namespace Milil
             var flushPackTask = dbFile.FlushAsync().ConfigureAwait(false);
 
             // module.json
-            var module = new Module
+            Module module = null;
+
+            try
+            {
+                await using var moduleFileR = File.Open(MODULE_FILE, FileMode.OpenOrCreate, FileAccess.Read, FileShare.Read);
+                module = await JsonSerializer.DeserializeAsync<Module>(moduleFileR);
+            }
+            catch (JsonException jEx)
+            {
+                await Console.Error.WriteLineAsync(jEx.Message);
+            }
+
+            module ??= new Module
             {
                 Name = root.Name,
                 Title = root.Name,
@@ -134,9 +146,15 @@ namespace Milil
                 }
             };
 
-            await using var moduleFile = File.Open(MODULE_FILE, FileMode.Create, FileAccess.ReadWrite, FileShare.Read);
-            await JsonSerializer.SerializeAsync(moduleFile, module, ModuleSerializationRules);
-            var flushModuleTask = moduleFile.FlushAsync().ConfigureAwait(false);
+            if (Version.TryParse(module.Version, out var ver))
+            {
+                // Formatting, ignore and trim Revision.
+                module.Version = $"{ver.Major}.{ver.Minor}.{ver.Build + 1}";
+            }
+
+            await using var moduleFileW = File.Open(MODULE_FILE, FileMode.Create, FileAccess.ReadWrite, FileShare.Read);
+            await JsonSerializer.SerializeAsync(moduleFileW, module, ModuleSerializationRules);
+            var flushModuleTask = moduleFileW.FlushAsync().ConfigureAwait(false);
 
             await flushPackTask;
             await flushModuleTask;

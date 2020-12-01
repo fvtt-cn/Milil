@@ -9,7 +9,7 @@ namespace Milil.Models
         public string Name { get; set; }
 
         [JsonPropertyName("author")]
-        public string Author { get; set; } = "";
+        public string Author { get; set; } = "Milil";
 
         [JsonPropertyName("title")]
         public string Title { get; set; }
