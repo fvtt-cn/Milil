@@ -26,7 +26,7 @@ Milil 自身不需要安装，双击即可运行。
     ```
 2. 双击运行 `Milil.exe`，将会生成 `module.json` 和 `playlists.db`。
 3. 修改生成的文件并删除 `Milil.exe`。
-3. 移动整个目录到 Foundry VTT 配置的 `Data/modules/` 下。
+4. 移动整个目录到 Foundry VTT 配置的 `Data/modules/` 下。
 
 ## 限制
 - 目前 Milil 会忽略所有二级和更深目录里的音乐。

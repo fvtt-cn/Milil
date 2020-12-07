@@ -26,7 +26,7 @@ However, you need `.NET 5.0` Runtime to run it or download a self-contained Mili
     ```
 2. Run `Milil.exe` and it will generate `module.json` and `playlists.db`. 
 3. Modify the generated files and delete `Milil.exe`.
-3. Move the whole root directory under `Data/modules/` that Foundry VTT configured.
+4. Move the whole root directory under `Data/modules/` that Foundry VTT configured.
 
 ## Limitation
 - Currently, Milil will ignore all 2nd level and deeper directories and their files/musics.
